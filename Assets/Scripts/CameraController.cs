@@ -4,14 +4,51 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public float minZoom = 10.0f;
-    public float maxZoom = 30.0f;
+    private Vector3 defaultCameraPos;
+    
+    public GameObject level;
+
+    [Header ("Camera Settings")]
+    [SerializeField] private float cameraMovSpeed = 0.5f;
+    [SerializeField] private float cameraZoomSpeed = 0.5f;
+    [SerializeField] private float minZoom = 10.0f;
+    [SerializeField] private float maxZoom = 30.0f;
+    [SerializeField] private bool enableZoom = false;
+
+    private void Start()
+    {
+        if (level.GetComponent<Collider>() == null) { return; }
+        GetLevelSize();
+        SetDefaultCameraPos(transform.position);
+    }
 
     // Update is called once per frame
     void Update()
+    {
+        Vector3 pos = GetInput();
+        transform.Translate(pos);
+    }
+
+    // Get the size of the level
+    private Vector3 GetLevelSize()
+    {
+        Vector3 levelSize = level.GetComponent<Collider>().bounds.size;
+        return levelSize;
+    }
+
+    private Vector3 CameraMovableArea()
+    {
+        return GetLevelSize() / 4;
+    }
+
+    private void SetDefaultCameraPos(Vector3 pos)
     {   
-            Vector3 p = GetInput();
-            transform.Translate(p);
+        defaultCameraPos = pos;
+    }
+
+    private Vector3 GetDefaultCameraPos()
+    {
+        return defaultCameraPos;
     }
 
     private Vector3 GetInput()
@@ -20,46 +57,66 @@ public class CameraController : MonoBehaviour
         Vector3 velocity = new Vector3(0, 0, 0);
 
         // Reset position (For testing purpose)
-        if(Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.Q))
         {
-            transform.position = Vector3.zero;
+            transform.position = GetDefaultCameraPos();
         }
-        // Move forwards
-        if (Input.GetKey(KeyCode.W))
+
+        if (transform.position.z < CameraMovableArea().z)
         {
-            velocity += new Vector3(0, 1, 0);
-        }
-        // Move backwards
-        if (Input.GetKey(KeyCode.S))
-        {
-            velocity += new Vector3(0, -1, 0);
-        }
-        // Move left
-        if (Input.GetKey(KeyCode.A))
-        {
-            velocity += new Vector3(-1, 0, 0);
-        }
-        // Move right
-        if (Input.GetKey(KeyCode.D))
-        {
-            velocity += new Vector3(1, 0, 0);
-        }
-        // Fix the min y position of the camera
-        if (transform.position.y > minZoom)
-        {
-            // Zoom out
-            if (mouseScrollWheel > 0f)
+            // Move forwards
+            if (Input.GetKey(KeyCode.W))
             {
-                velocity += new Vector3(0, 0, 1);
+                velocity += new Vector3(0, cameraMovSpeed, 0);
             }
         }
-        // Fix the m y position of the camera
-        if (transform.position.y < maxZoom)
+
+        if (transform.position.z > -CameraMovableArea().z)
         {
-            // Zoom in
-            if (mouseScrollWheel < 0f)
+            // Move backwards
+            if (Input.GetKey(KeyCode.S))
             {
-                velocity += new Vector3(0, 0, -1);
+                velocity += new Vector3(0, -cameraMovSpeed, 0);
+            }
+        }
+
+        if (transform.position.x > -CameraMovableArea().x)
+        {
+            // Move left
+            if (Input.GetKey(KeyCode.A))
+            {
+                velocity += new Vector3(-cameraMovSpeed, 0, 0);
+            }
+        }
+
+        if (transform.position.x < CameraMovableArea().x)
+        {
+            // Move right
+            if (Input.GetKey(KeyCode.D))
+            {
+                velocity += new Vector3(cameraMovSpeed, 0, 0);
+            }
+        }
+
+        if(enableZoom)
+        {
+            // Fix the min y position of the camera
+            if (transform.position.y > minZoom)
+            {
+                // Zoom out
+                if (mouseScrollWheel > 0f)
+                {
+                    velocity += new Vector3(0, 0, cameraZoomSpeed);
+                }
+            }
+            // Fix the m y position of the camera
+            if (transform.position.y < maxZoom)
+            {
+                // Zoom in
+                if (mouseScrollWheel < 0f)
+                {
+                    velocity += new Vector3(0, 0, -cameraZoomSpeed);
+                }
             }
         }
         return velocity;
