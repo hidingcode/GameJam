@@ -566,12 +566,24 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1824902783}
         m_TargetAssemblyTypeName: ObjectPlacementManager, Assembly-CSharp
-        m_MethodName: SelectObject
+        m_MethodName: SetObjectIndex
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1824902783}
+        m_TargetAssemblyTypeName: ObjectPlacementManager, Assembly-CSharp
+        m_MethodName: SelectObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -798,12 +810,24 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1824902783}
         m_TargetAssemblyTypeName: ObjectPlacementManager, Assembly-CSharp
-        m_MethodName: SelectObject
+        m_MethodName: SetObjectIndex
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1824902783}
+        m_TargetAssemblyTypeName: ObjectPlacementManager, Assembly-CSharp
+        m_MethodName: SelectObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1221,8 +1245,20 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1824902783}
         m_TargetAssemblyTypeName: ObjectPlacementManager, Assembly-CSharp
-        m_MethodName: SelectObject
+        m_MethodName: SetObjectIndex
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1824902783}
+        m_TargetAssemblyTypeName: ObjectPlacementManager, Assembly-CSharp
+        m_MethodName: SelectObject
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1671,10 +1707,17 @@ MonoBehaviour:
   - {fileID: 3473064540690600873, guid: 9524fda2bd149614b81ba93e12ba965b, type: 3}
   - {fileID: 3442870816461227059, guid: d4b0c9c73a37d6b449888248e8431f09, type: 3}
   - {fileID: 498674098900099542, guid: 9c620f5bba3858d41b06e143af243590, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 7ee7ae667cec50341973ab2998bf3133, type: 2}
+  - {fileID: 2100000, guid: dae74b030408dcb40ac94d7d355ae527, type: 2}
+  - {fileID: 2100000, guid: 6f34d68a6d4c537418cff0236a9615b4, type: 2}
+  pendingMaterials:
+  - {fileID: 2100000, guid: 43529c9a58f12f440a009bc4a7b5f933, type: 2}
+  - {fileID: 2100000, guid: 03fe9649a3ad94c4080ed676b3a2799e, type: 2}
+  objectIndex: 0
   layerMask:
     serializedVersion: 2
     m_Bits: 128
-  canPlace: 1
 --- !u!4 &1824902784
 Transform:
   m_ObjectHideFlags: 0
