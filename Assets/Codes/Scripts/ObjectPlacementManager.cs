@@ -58,6 +58,18 @@ public class ObjectPlacementManager : MonoBehaviour
         pendingObject = null;
     }
 
+    void UpdateMaterials()
+    {
+        if(canPlace)
+        {
+            pendingObject.GetComponent<MeshRenderer>().material = pendingMaterials[0];
+        }
+        else
+        {
+            pendingObject.GetComponent<MeshRenderer>().material = pendingMaterials[1];
+        }
+    }
+
     public void SetObjectIndex(int index)
     {
         objectIndex = index;
@@ -71,17 +83,5 @@ public class ObjectPlacementManager : MonoBehaviour
     public bool GetCanPlace()
     {
         return canPlace;
-    }
-
-    void UpdateMaterials()
-    {
-        if(canPlace)
-        {
-            pendingObject.GetComponent<MeshRenderer>().material = pendingMaterials[0];
-        }
-        else
-        {
-            pendingObject.GetComponent<MeshRenderer>().material = pendingMaterials[1];
-        }
     }
 }
