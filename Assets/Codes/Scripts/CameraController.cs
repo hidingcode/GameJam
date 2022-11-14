@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utils;
 
 public class CameraController : MonoBehaviour
 {
     private Vector3 defaultCameraPos;
     
-    public GameObject level;
+    [SerializeField] private GameObject level;
 
     [Header ("Camera Settings")]
     [SerializeField] private float cameraMovSpeed = 0.5f;
@@ -18,7 +19,7 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         if (level.GetComponent<Collider>() == null) { return; }
-        GetLevelSize();
+        UtilsClass.GetGameObjectSize(level);
         SetDefaultCameraPos(transform.position);
     }
 
@@ -29,16 +30,9 @@ public class CameraController : MonoBehaviour
         transform.Translate(pos);
     }
 
-    // Get the size of the level
-    private Vector3 GetLevelSize()
-    {
-        Vector3 levelSize = level.GetComponent<Collider>().bounds.size;
-        return levelSize;
-    }
-
     private Vector3 CameraMovableArea()
     {
-        return GetLevelSize() / 4;
+        return UtilsClass.GetGameObjectSize(level) / 4;
     }
 
     private void SetDefaultCameraPos(Vector3 pos)
