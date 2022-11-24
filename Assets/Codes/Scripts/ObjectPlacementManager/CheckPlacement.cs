@@ -22,7 +22,7 @@ namespace Codes.Scripts
         }
         
         // Check if the object enter the trigger
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerStay(Collider other)
         {
             if (other.gameObject.CompareTag("Object"))
             {
