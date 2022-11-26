@@ -447,13 +447,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 878a7d086540e4541892c997c273f720, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Test
-  hitPoint: 10
-  movementModifier: 5
-  spawnX: 0
-  spawnY: 1
-  spawnZ: 0
-  prefab: {fileID: 2033183810}
 --- !u!136 &2033183813
 CapsuleCollider:
   m_ObjectHideFlags: 0
