@@ -10,7 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ac0560ee5396a64890f909ac8a59e96, type: 3}
-  m_Name: Monster
+  m_Name: Zombie
   m_EditorClassIdentifier: 
-  monsterName: Capsule
-  price: 10
+  monsterName: Zombie
+  description: No description
+  monsterSprite: {fileID: 21300000, guid: e5600378dd761e64d9423790c482bf36, type: 3}
+  monsterPrice: 10
+  isAvaliable: 1

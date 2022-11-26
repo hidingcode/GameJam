@@ -7,6 +7,8 @@ namespace Codes.Scripts.ShopSystem
     {
         public string monsterName = "Unnamed";
         public string description = "No description";
-        public int price;
+        public Sprite monsterSprite;
+        public int monsterPrice;
+        public bool isAvaliable = true;
     }
 }

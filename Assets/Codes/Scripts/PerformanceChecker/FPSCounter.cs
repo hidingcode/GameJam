@@ -9,22 +9,22 @@ namespace Codes.Scripts.PerformanceChecker
     {   
         public TextMeshProUGUI fpsText;
         
-        private float pollingTime = 1f;
-        private float time;
-        private float frameCount;
+        private readonly float _pollingTime = 1f;
+        private float _time;
+        private float _frameCount;
 
         private void Update()
         {
-            time += Time.unscaledDeltaTime;
-            frameCount++;
+            _time += Time.unscaledDeltaTime;
+            _frameCount++;
 
-            if (time >= pollingTime)
+            if (_time >= _pollingTime)
             {
-                int frameRate = Mathf.RoundToInt(frameCount / time);
+                int frameRate = Mathf.RoundToInt(_frameCount / _time);
                 fpsText.text = frameRate.ToString() + " FPS";
 
-                time -= pollingTime;
-                frameCount = 0;
+                _time -= _pollingTime;
+                _frameCount = 0;
             }
         }
     }
