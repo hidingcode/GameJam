@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Levels/Scenes/Menu.unity
     guid: 31291b793e5fcc14b995b8c13162439a
   - enabled: 1
-    path: Assets/Levels/Scenes/TestCamera.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Levels/Scenes/AiTest.unity
+    guid: 8cd4c8a75240ab2488f2659ef5d2620b
   m_configObjects: {}
