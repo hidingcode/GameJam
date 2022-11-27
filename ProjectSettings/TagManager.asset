@@ -5,13 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Object
+  - ConfirmationBox
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Target
   - Water
   - UI
+  - PatrolEnemy
+  - Obstruction
   - 
   - Ground
   - 
