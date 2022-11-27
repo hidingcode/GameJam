@@ -3098,7 +3098,7 @@ GameObject:
   - component: {fileID: 836528618}
   - component: {fileID: 836528619}
   m_Layer: 0
-  m_Name: UI
+  m_Name: MainUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3760,7 +3760,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Are you sure to unlock this monster
+  m_text: Are you sure to unlock this monster ?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6437,7 +6437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3199395075695271601, guid: 9a14a3b0f03a8d74fbc1f2bc4db3b48f, type: 3}
       propertyPath: objectsToSpawn.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3199395075695271601, guid: 9a14a3b0f03a8d74fbc1f2bc4db3b48f, type: 3}
       propertyPath: objectsToSpawn.Array.data[0]
@@ -6451,6 +6451,10 @@ PrefabInstance:
       propertyPath: objectsToSpawn.Array.data[2]
       value: 
       objectReference: {fileID: 451857029}
+    - target: {fileID: 3199395075695271601, guid: 9a14a3b0f03a8d74fbc1f2bc4db3b48f, type: 3}
+      propertyPath: objectsToSpawn.Array.data[3]
+      value: 
+      objectReference: {fileID: 8170839284358110473, guid: d7913cd39ad47f943a43747f9ff69d09, type: 3}
     - target: {fileID: 3199395075695271614, guid: 9a14a3b0f03a8d74fbc1f2bc4db3b48f, type: 3}
       propertyPath: m_Name
       value: Spawner
@@ -7149,6 +7153,10 @@ PrefabInstance:
     - target: {fileID: 6530122880405744408, guid: 9a5739548199b8846b08031ee179f96f, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6530122880405744409, guid: 9a5739548199b8846b08031ee179f96f, type: 3}
+      propertyPath: candyCounts
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 6530122880405744409, guid: 9a5739548199b8846b08031ee179f96f, type: 3}
       propertyPath: shopMonsters

@@ -8,10 +8,10 @@ namespace Codes.Scripts.System
         [Tooltip("Please use the game objects from the hierarchy for the script to work")]
         public GameObject[] objectsToSpawn;
         private int _objectIndex = 0;
-        private float _offsetY;
+        private float _offsetY; //offsets for each object
         
         [Tooltip("Determine whether the spawner can spawn an object or not")]
-        [SerializeField] private bool canSpawn = true;
+        [SerializeField] private bool isSpawnable = true;
         [Tooltip("The time interval between each spawn")]
         public float timeToSpawn;
         private float _currentTimeToSpawn;
@@ -21,7 +21,7 @@ namespace Codes.Scripts.System
         {   
             _offsetY = UtilsClass.GetGameObjectHeight(objectsToSpawn[_objectIndex])/ 2;
 
-            if (canSpawn)
+            if (isSpawnable)
             {   
                 UpdateTimer();
             }
@@ -50,7 +50,8 @@ namespace Codes.Scripts.System
             }
             else
             {   
-                SpawnObject(objectsToSpawn[_objectIndex], _offsetY);
+                // SpawnObject(objectsToSpawn[_objectIndex], _offsetY);
+                SpawnProjectile(objectsToSpawn[3].transform);
                 _currentTimeToSpawn = timeToSpawn;
             }
         }
@@ -68,15 +69,21 @@ namespace Codes.Scripts.System
         }
         
         // Make the spawner to spawn or not
-        public void SetCanSpawn(bool canSpawn)
+        public void SetCanSpawn(bool isSpawnable)
         {
-            this.canSpawn = canSpawn;
+            this.isSpawnable = isSpawnable;
         }
         
         // Get whether the game object can be spawn or not
         public bool GetCanSpawn()
         {
-            return canSpawn;
+            return isSpawnable;
+        }
+
+        // Spawn projectile that will move forward from the position of the spawner
+        public void SpawnProjectile(Transform projectile)
+        {
+            Transform projectileRef = Instantiate(projectile, transform.position, Quaternion.identity);
         }
     }
 }

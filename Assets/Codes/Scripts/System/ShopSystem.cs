@@ -9,7 +9,7 @@ namespace Codes.Scripts.System
     public class ShopSystem : MonoBehaviour
     {   
         // Just for testing (need to take candy count from player)
-        public int candyCounts = 100;
+        public int candyCounts = 60;
         // Index to track which monster is selected
         private int _buyIndex;
     
