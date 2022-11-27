@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: Zombie
   m_EditorClassIdentifier: 
   monsterName: Zombie
-  description: No description
+  description: A zombie
+  monsterPrefab: {fileID: 5769684380756569338, guid: 4ef8ce23512bf6d459d7516910ffce20, type: 3}
+  monsterType: 1
   monsterSprite: {fileID: 21300000, guid: e5600378dd761e64d9423790c482bf36, type: 3}
   monsterPrice: 10
-  isAvaliable: 1
+  isUnlocked: 0
+  hitPoint: 0
+  speedModifier: 0
+  spawnCoolDown: 0

@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ac0560ee5396a64890f909ac8a59e96, type: 3}
-  m_Name: Goblin
+  m_Script: {fileID: 11500000, guid: 982f97e97da2ec84aafbbe749da1e453, type: 3}
+  m_Name: MonstersUnlocked
   m_EditorClassIdentifier: 
-  monsterName: Goblin
-  description: No description
-  monsterSprite: {fileID: 21300000, guid: 70632ddfe8e71b04b8f90ef7e29a9e98, type: 3}
-  monsterPrice: 20
-  isAvaliable: 1
+  monsters:
+  - {fileID: 11400000, guid: 306d7db4113377749b1c3ab63124c683, type: 2}

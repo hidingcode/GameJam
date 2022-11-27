@@ -48,7 +48,7 @@ namespace Codes.Scripts
         
         private void SetCameraMovement(bool _canCameraMove)
         {
-            GameObject.Find("SideCamera").GetComponent<CameraController>().enabled = _canCameraMove;
+            cameras[1].enabled = _canCameraMove;
         }
     }
 }

@@ -1,8 +1,7 @@
-using System;
-using UnityEngine;
 using Codes.Scripts.Utils;
+using UnityEngine;
 
-namespace Codes.Scripts
+namespace Codes.Scripts.System
 {
     public class Spawner : MonoBehaviour
     {   

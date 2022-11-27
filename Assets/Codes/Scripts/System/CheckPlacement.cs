@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Codes.Scripts
+namespace Codes.Scripts.System
 {
     public class CheckPlacement : MonoBehaviour
     {

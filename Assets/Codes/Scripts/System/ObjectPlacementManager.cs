@@ -1,11 +1,12 @@
+using Codes.Scripts.DataModel;
 using Codes.Scripts.Utils;
 using UnityEngine;
 
-namespace Codes.Scripts
+namespace Codes.Scripts.System
 {
     public class ObjectPlacementManager : MonoBehaviour
     {
-        public GameObject[] objects;
+        public Monsters[] monsters;
         [SerializeField] private Material[] materials;
 
         private GameObject _pendingObject;
@@ -17,7 +18,7 @@ namespace Codes.Scripts
         private RaycastHit _hit;
         [SerializeField] LayerMask layerMask;
 
-        private bool canPlace;
+        private bool _canPlace = true;
 
         // Update is called once per frame
         private void Update()
@@ -28,7 +29,7 @@ namespace Codes.Scripts
                 _pendingObject.transform.position = new Vector3(_pos.x, offset, _pos.z);
                 UpdateMaterials();
                 
-                if(Input.GetMouseButtonDown(0) && canPlace)
+                if(Input.GetMouseButtonDown(0) && _canPlace)
                 {
                     PlaceObject();
                 }
@@ -48,7 +49,7 @@ namespace Codes.Scripts
         // Spawn selected object
         public void SelectObject()
         {
-            _pendingObject = Instantiate(objects[objectIndex], _pos, transform.rotation);
+            _pendingObject = Instantiate(monsters[objectIndex].monsterPrefab, _pos, transform.rotation);
         }
         
         // Place selected object
@@ -61,7 +62,7 @@ namespace Codes.Scripts
         // Update the Material of the selected object
         void UpdateMaterials()
         {
-            if(canPlace)
+            if(_canPlace)
             {
                 _pendingObject.GetComponent<MeshRenderer>().material = pendingMaterials[0];
             }
@@ -78,12 +79,12 @@ namespace Codes.Scripts
 
         public void SetCanPlace(bool condition)
         {
-            canPlace = condition;
+            _canPlace = condition;
         }
 
         public bool GetCanPlace()
         {
-            return canPlace;
+            return _canPlace;
         }
     }
 }
