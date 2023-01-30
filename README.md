@@ -1,1 +1,1 @@
-# A Game for GameOff 2022
+# A Game for GameOff 2022 (Uncompleted game)
